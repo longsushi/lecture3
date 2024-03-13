@@ -1,11 +1,6 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Tasks</title>
-  </head>
-  <body>
-    <ul>
+{% extends "tasks/layout.html" %}
+
+{% block body %}
       <table>
         {% for task in tasks %}
         <tr>
@@ -14,6 +9,4 @@
         </tr>
         {% endfor %}
       </table>
-    </ul>
-  </body>
-</html>
+{% endblock %}
