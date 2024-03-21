@@ -8,4 +8,4 @@ def index(request):
     return render(request, "tasks/index.html", {"tasks":tasks})
 
 def add(request):
-    return render(reqeust, "tasks/add.html")
+    return render(request, "tasks/add.html")
