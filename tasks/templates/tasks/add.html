@@ -4,9 +4,9 @@
 <div class="center">
   <form class="" action="{% url 'tasks:add' %}" method="post">
     {% csrf_token %}
-    <input type="text" name="task" placeholder="Aufgabe:">
+    {{ form.task }}
     <br>
-    <input type="number" name="prio" placeholder="Prio:">
+    {{ form.priority }}
     <br>
     <input type="submit" name="submit" value="Add">
   </form>
