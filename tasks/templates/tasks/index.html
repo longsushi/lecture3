@@ -2,12 +2,31 @@
 
 {% block body %}
       <table>
-        {% for task in tasks %}
-        <tr>
-          <td>{{ task.0 }}</td>
-          <td>{{ task.1 }}</td>
-        </tr>
-        {% endfor %}
+        <thead>
+          <tr>
+            <th>Aufgabe</th>
+            <th>Priorität</th>
+            <th>löschen</th>
+          </tr>
+        </thead>
+        <tbody>
+         {% for task in tasks %}
+          <tr>
+            <td>{{ task.0 }}</td>
+            <td style = "text-align: right;">{{ task.1 }}</td>
+            <td style = "text-align: center;">
+              <form class="" method="post">
+                {% csrf_token %}
+                  <input type="submit" name= "{{ task.0 }}" value="X" method="post">
+              </form>
+            </td>
+          </tr>
+          {% empty %}
+          <tr>
+            <td>Keine Aufgaben</td>
+          </tr>
+          {% endfor %}
+        </tbody>
       </table>
 
       <a href="{% url 'tasks:add'%}">Add</a>
